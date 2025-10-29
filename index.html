@@ -41,6 +41,11 @@
             cursor: pointer;
             font-size: 24px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: left 0.3s ease;
+        }
+        
+        .menu-toggle.shifted {
+            left: 300px;
         }
         
         .sidebar {
@@ -370,7 +375,7 @@
     
     <div class="container">
         <nav class="sidebar" id="sidebar">
-            <!-- <h1>Energy Systems</h1> -->
+            <h1>Energy Systems</h1>
             <h2>Navigation</h2>
             <div class="nav-item active" onclick="showPage('home')">
                 <span class="nav-icon">🏠</span>
@@ -585,8 +590,10 @@
         function toggleMenu() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.querySelector('.overlay');
+            const menuToggle = document.querySelector('.menu-toggle');
             sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
+            menuToggle.classList.toggle('shifted');
         }
     </script>
 </body>
